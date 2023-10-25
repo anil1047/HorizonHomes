@@ -20,4 +20,4 @@ app.listen(3000,() =>{
 
 });
 
-app.get('/api/user',userRouter);
+app.use('/api/user',userRouter);
