@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import {Link, useNavigate} from 'react-router-dom'
+import OAuth from '../Components/OAuth';
 
 
 export default function SignUp() {
@@ -50,6 +51,7 @@ setFormData({
     
   };
   return (
+    <div className='bg-image_signup'>
     <div className='p-3 max-w-lg mx-auto'>
       <h1 className='text-3xl text-center font-semibold
        my-7'>Sign Up</h1>
@@ -86,6 +88,8 @@ setFormData({
       <button disabled={loading}className='bg-slate-700 text-white p-3 rounded-lg uppercase hover:first-letter:first-line:
       opacity-95 disabled:opacity-80'> {loading?'Loading...':'Sign up'}
        </button>
+
+       <OAuth/>
       </form>
 
       <div className='flex gap-2 mt-5'>
@@ -95,6 +99,7 @@ setFormData({
         </Link>
       </div>
       {error && <p className='text-red-500 mt-5'>{error}</p>}
+    </div>
     </div>
   )
 }
