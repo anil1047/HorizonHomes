@@ -12,7 +12,7 @@ import {
   getDownloadURL,
 } from "firebase/storage";
 
-import { updateUserStart, updateUserFailure, updateUserSuccess } from "../redux/user/userSlice";
+import { updateUserStart, updateUserFailure, updateUserSuccess, deleteUserFailure, deleteUserStart, deleteUserSuccess } from "../redux/user/userSlice";
 import { useDispatch } from "react-redux";
 
 export default function Profile() {
@@ -95,7 +95,27 @@ export default function Profile() {
   
   };
 
+const handleUserDelete = async()=>{
+  try{
+    dispatch(deleteUserStart());
 
+    const res = await fetch(`/api/user/delete/${currentUser._id}`,{
+      method:'DELETE',
+    }) 
+    const data=await res.json();
+
+    if(data.success===false){
+      dispatch(deleteUserFailure(data.message));
+      return;
+    }
+
+    dispatch(deleteUserSuccess(data));
+
+
+  }catch(error){
+    dispatch(deleteUserFailure(error.message));
+  }
+}
 
 
   return (
@@ -171,7 +191,7 @@ export default function Profile() {
         </button>  
       </form>
       <div className="flex justify-between mt-5">
-        <span
+        <span onClick={handleUserDelete}
           className="text-red-700 cursor-pointer
         "
         >
