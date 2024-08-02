@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-import axios from "axios";
 
 import { useSelector } from "react-redux";
 import { useRef } from "react";
@@ -12,7 +11,7 @@ import {
   getDownloadURL,
 } from "firebase/storage";
 
-import { updateUserStart, updateUserFailure, updateUserSuccess, deleteUserFailure, deleteUserStart, deleteUserSuccess } from "../redux/user/userSlice";
+import { updateUserStart, updateUserFailure, updateUserSuccess, deleteUserFailure, deleteUserStart, deleteUserSuccess, signOutUserStart, signOutUserFailure, signOutUserSuccess } from "../redux/user/userSlice";
 import { useDispatch } from "react-redux";
 
 export default function Profile() {
@@ -115,6 +114,24 @@ const handleUserDelete = async()=>{
   }catch(error){
     dispatch(deleteUserFailure(error.message));
   }
+};
+
+const handleSignOut = async()=>{
+    try{
+      dispatch(signOutUserStart());
+      const res=await fetch('/api/auth/signout');
+      const data= await res.json();
+
+      if(data.success===false){
+        dispatch(signOutUserFailure(data.message));
+        return;
+      }
+      dispatch(signOutUserSuccess(data));
+
+    }catch(error){
+      dispatch(signOutUserFailure());
+
+    };
 }
 
 
@@ -199,7 +216,7 @@ const handleUserDelete = async()=>{
           Delete Account
         </span>
 
-        <span
+        <span onClick={handleSignOut}
           className="text-red-700 cursor-pointer
         "
         >
