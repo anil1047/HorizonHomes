@@ -7,15 +7,22 @@ body {
 }
 
 .bg-image {
-    background-image: url('./Components/signin22.jpg');
+    background-image: url('./Components/images/signin22.jpg');
     background-size: cover;
     background-position: center;
     min-height: 100vh; /* Ensure it covers the whole viewport height */
   }
 
   .bg-image_signup {
-    background-image: url('./Components/signup4.jpg');
+    background-image: url('./Components/images/signup4.jpg');
     background-size: cover;
     background-position: center;
     min-height: 100vh; /* Ensure it covers the whole viewport height */
+  }
+
+  .bg-image_profile{
+    background-image: url('./Components/images/profile4.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
   }

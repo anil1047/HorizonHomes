@@ -131,7 +131,7 @@ const handleSignOut = async()=>{
     }catch(error){
       dispatch(signOutUserFailure());
 
-    };
+    }
 }
 
 
@@ -143,8 +143,8 @@ const handleSignOut = async()=>{
       >
         Profile
       </h1>
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-        <input
+      <form  onSubmit={handleSubmit} className="flex flex-col gap-4">
+        <input 
           onChange={(e) => setFile(e.target.files[0])}
           type="file"
           ref={fileRef}
@@ -227,5 +227,6 @@ const handleSignOut = async()=>{
       <p className="text-red-700 mt-5">{error ? error :''}</p>
       <p className="text-green-700 mt-5">{updateSuccess ?'User updated successfully!':''}</p>
     </div>
+   
   );
 }
