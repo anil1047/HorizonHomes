@@ -47,7 +47,7 @@
             required:true,
         },
         offer:{
-            type:String,
+            type:Boolean,
             required:true,
         },
 
