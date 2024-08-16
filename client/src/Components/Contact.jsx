@@ -25,7 +25,7 @@ export default function Contact({ listing }) {
       {landlord && (
         <div className='flex flex-col gap-2 p-3 m-3'>
           <p className='text-xl'>
-            Contact <span className='font-semibold text-red-700'>{landlord.username}</span>{' '}
+            Send a Query to Landlord (<span className='font-semibold text-red-700'>{landlord.username}</span>){' '}
             for{' '}
             <span className='font-semibold'>{listing.name.toLowerCase()}</span>
           </p>

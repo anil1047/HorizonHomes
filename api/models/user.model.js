@@ -19,7 +19,7 @@ const userSchema =new mongoose.Schema({
     },
     avatar:{
         type:String,
-         default: "https://www.pexels.com/photo/person-holding-camera-1704488/"
+         default:"",
     }
 },{timestamps:true});
 

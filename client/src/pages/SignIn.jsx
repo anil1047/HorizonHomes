@@ -50,8 +50,7 @@ export default function SignIn() {
       navigate('/');
     } catch (error) {
       dispatch(signInFailure(error.message));
-      // setLoading(false);
-      // setError(error.message);
+     
     }
   };
 
@@ -84,7 +83,7 @@ export default function SignIn() {
         </button>
         <OAuth/>
       </form>
-      <div className='flex gap-2 mt-5'>
+      <div className='flex gap-2 mt-5 text-lg'>
         <p>Dont have an account?</p>
         <Link to={'/signup'}>
           <span className='text-blue-700'>Sign up</span>

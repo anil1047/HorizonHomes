@@ -14,7 +14,7 @@ body {
   }
 
   .bg-image_signup {
-    background-image: url('./Components/images/signup4.jpg');
+    background-image: url('./Components/images/sign.jpg');
     background-size: cover;
     background-position: center;
     min-height: 100vh; /* Ensure it covers the whole viewport height */
