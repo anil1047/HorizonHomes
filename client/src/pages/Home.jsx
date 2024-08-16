@@ -55,8 +55,8 @@ export default function Home() {
           <span className="text-slate-500">
             <TypeAnimation
               sequence={[
-                "Find your next absolute",
-                10,
+                // "Find your next absolute",
+                // 10,
                 "Find your next Perfect",
                 10,
                
@@ -64,7 +64,7 @@ export default function Home() {
               ]}
               speed={0.000000001}
               style={{ fontSize: "" }}
-              repeat={infinity}
+              repeat={0}
             />
           </span>
           <br />
