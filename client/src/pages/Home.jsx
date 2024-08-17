@@ -6,7 +6,7 @@ import SwiperCore from "swiper";
 import "swiper/css/bundle";
 import ListingItem from "../Components/ListingItem";
 import { TypeAnimation } from "react-type-animation";
-import { infinity } from "ldrs";
+
 
 export default function Home() {
   const [offerListings, setOfferListings] = useState([]);
@@ -79,9 +79,22 @@ export default function Home() {
         </div>
         <Link
           to={"/search"}
-          className="text-xs sm:text-sm text-blue-800 font-bold hover:underline"
+          className="text-xs sm:text-xl text-blue-800 font-bold hover:underline"
         >
-          Let's get started...
+          <TypeAnimation
+              sequence={[
+                // "Find your next absolute",
+                // 10,
+                "Click here to get started..",
+                10,
+               
+                
+              ]}
+              speed={0.000000001}
+              style={{ fontSize: "" }}
+              repeat={0}
+            />
+         
         </Link>
       </div>
 
@@ -95,6 +108,7 @@ export default function Home() {
                 style={{
                   background: `url(${listing.imageUrls[0]}) center no-repeat`,
                   backgroundSize: "cover",
+                  backgroundPosition:"center",               
                 }}
                 className="h-[500px]"
                 key={listing._id}
